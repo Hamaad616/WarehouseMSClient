@@ -25,7 +25,7 @@ Route::prefix('client')->group(function(){
     Route::get('/login', [\App\Http\Controllers\Auth\ClientLoginController::class, 'showLoginForm'])->name('client.login')->middleware('check_login');
     Route::post('/login', [\App\Http\Controllers\MainController::class, 'user_login'])->name('client.login.submit')->middleware('check_login');
     Route::get('/client-home', [\App\Http\Controllers\MainController::class, 'index'])->name('client.dashboard')->middleware('check_login');
-    Route::get('/request/product-in', [\App\Http\Controllers\MainController::class, 'productRequestInForm']);
+    Route::get('/request/product-in', [\App\Http\Controllers\MainController::class, 'productRequestInForm'])->middleware('check_login');
     Route::post('/request/product-in-submit', [\App\Http\Controllers\MainController::class, 'productRequestInFormSubmit'])->name('client.stock-request');
     Route::get('/product/import-csv', [App\Http\Controllers\MainController::class, 'productImportCsv'])->name('import.csv');
     Route::post('/product/import-csv', [App\Http\Controllers\MainController::class, 'productImportCsvSubmit'])->name('file-import');

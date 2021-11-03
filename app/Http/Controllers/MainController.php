@@ -42,7 +42,10 @@ class MainController extends Controller
         $users = clients::where('client_email', '=',$email)->first();
         $user = clients::where('client_email', '=',$email)->get();
         $password = Hash::check($password, $users->password);
-        if (empty($users) && !Hash::check($password, $users->password)) {
+        if(empty($users->email) && empty($users->password)){
+            return back()->with('danger', 'Email or Password does not exist');
+        }
+        else if (empty($users) && !Hash::check($password, $users->password)) {
             return redirect("/");
         } else {
             foreach ($user as $user1) {

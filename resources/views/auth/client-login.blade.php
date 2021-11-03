@@ -12,6 +12,12 @@
                     </div>
                 @endif
 
+                @if(session()->has('danger'))
+                    <div class="alert alert-danger">
+                        {{ session('danger') }}
+                    </div>
+                @endif
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('client.login.submit') }}">
                         @csrf
