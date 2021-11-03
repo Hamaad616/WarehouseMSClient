@@ -43,42 +43,11 @@
                     <div class="card" style="width: 20rem;">
                         <center><i class="bi-box-arrow-in-down" style="font-size: 10rem"></i></center>
                         <div class="card-body">
-                            <h5 class="card-title"> {{ strtoupper('Request a product entry') }}</h5>
-                            <p class="card-text">Request a product entry in the warehouse</p>
-                            <a id="request_in" class="btn btn-success">Request IN</a>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 20rem;">
-                        <center><i class="bi bi-box-arrow-up" style="font-size: 10rem"></i></center>
-                        <div class="card-body">
-                            <h5 class="card-title">{{strtoupper('Request out a product')}}</h5>
-                            <p class="card-text">Request out a product from warehouse.</p>
-                            <a href="#" class="btn btn-danger">Request OUT</a>
-                        </div>
-                    </div>
-
-
-                    <div class="card" style="width: 20rem;">
-                        <center><i class="bi bi-receipt" style="font-size: 10rem"></i></center>
-                        <div class="card-body">
-                            <h5 class="card-title">{{strtoupper('Warehouse storage plan')}}</h5>
-                            <p class="card-text">View your product storage plans and request for a change</p>
-                            <a href="#" class="btn btn-primary">Learn more <i class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 20rem;">
-                        <center><i class="bi-box-arrow-in-down" style="font-size: 10rem"></i></center>
-                        <div class="card-body">
                             <h5 class="card-title"> {{ strtoupper('Request a Product Creation') }}</h5>
                             <p class="card-text">Request a new product creation</p>
                             <a id="request_create" class="btn btn-success">Create Product</a>
                         </div>
                     </div>
-
-
-
                 </div>
 
             </div>

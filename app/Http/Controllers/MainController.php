@@ -126,9 +126,9 @@ class MainController extends Controller
         $requested_products = DB::table('client_stock_requests')->select('*')->where('client_id', '=', session('id'))->simplePaginate(10);
         $pending_requested_products = DB::table('client_stock_requests')->select('*')->where('client_id', '=', session('id'))->where('status', '=', 0)->simplePaginate(10);
         $approved_requested_products = DB::table('client_stock_requests')->select('*')->where('client_id', '=', session('id'))->where('status', '=', 1)->simplePaginate(10);
-        $product = DB::table('product_item')->select('*')->where('client_id', '=', session('id'))->first();
+        $product = DB::table('client_stock_requests')->select('*')->where('client_id', '=', session('id'))->first();
         $category = DB::table('categories')->select('*')->where('id', '=', $product->category_id)->get();
-        DB::table('')->select('')->insert([]);
+
         return view('client.products-requested', ['requested_products' => $requested_products, 'pending_requested_products' =>$pending_requested_products , 'approved_requested_products' =>$approved_requested_products ,'category' => $category]);
     }
 
