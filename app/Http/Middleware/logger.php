@@ -20,8 +20,6 @@ class logger
         {
             return $next($request);
         }
-        else{
          return redirect('/');
-        }
     }
 }
