@@ -119,7 +119,7 @@ class MainController extends Controller
         $products = DB::table('product_item')->select('*')->where('client_id', '=', $user_id)->simplePaginate(10);
         $product = DB::table('product_item')->select('*')->where('client_id', '=', $user_id)->first();
         $category = DB::table('categories')->select('*')->where('id', '=', $product->category_id)->get();
-        return view('client.products', compact(['products', 'category']));
+        return view('client.client-my-products', compact(['products', 'category']));
     }
 
     public function getRequestedProducts(){

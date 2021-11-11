@@ -33,13 +33,13 @@ Route::prefix('client')->group(function(){
     Route::get('/my-products', [App\Http\Controllers\MainController::class, 'getClientProducts'])->name('client.my-products');
     Route::get('/products/requested', [App\Http\Controllers\MainController::class, 'getRequestedProducts'])->name('products.requested');
     Route::get('/invoices', [App\Http\Controllers\MainController::class, 'getClientInvoices'])->name('client.invoices');
-    Route::get('/my-products/ajax', function (){
-        $user_id = session('id');
-        $products = DB::table('product_item')->select('*')->where('client_id', '=', $user_id)->simplePaginate(10);
-        $product = DB::table('product_item')->select('*')->where('client_id', '=', $user_id)->first();
-        $category = DB::table('categories')->select('*')->where('id', '=', $product->category_id)->get();
-        return view('client.client-my-products', compact(['products', 'category']));
-    });
+//    Route::get('/my-products/ajax', function (){
+//        $user_id = session('id');
+//        $products = DB::table('product_item')->select('*')->where('client_id', '=', $user_id)->simplePaginate(10);
+//        $product = DB::table('product_item')->select('*')->where('client_id', '=', $user_id)->first();
+//        $category = DB::table('categories')->select('*')->where('id', '=', $product->category_id)->get();
+//        return view('client.client-my-products', compact(['products', 'category']));
+//    });
     Route::post('/logout', [\App\Http\Controllers\MainController::class, 'logout'])->name('client.logout');
 });
 

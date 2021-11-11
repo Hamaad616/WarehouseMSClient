@@ -65,9 +65,9 @@
                 })
             }
 
-            var autoRefresh = setInterval(function (){
-                $('#table1').load('<?php echo url('/client/my-products/ajax')?>').fadeIn('slow')
-            },1000)
+            {{--var autoRefresh = setInterval(function (){--}}
+            {{--    $('#table1').load('<?php echo url('/client/my-products/ajax')?>').fadeIn('slow')--}}
+            {{--},1000)--}}
         </script>
 
 @endsection
