@@ -81,7 +81,7 @@
                         </li>
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('client.invoices') }}">Invoices <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('client.invoices', ['client_id' => session('id')]) }}">Invoices <span class="sr-only">(current)</span></a>
                         </li>
 
 

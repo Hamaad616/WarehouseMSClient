@@ -19,9 +19,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 bg-light p-4 rounded shadow-lg p-3 mb-5">
-                <a href="{{ url('/') }}" class="btn btn-primary bi bi-house mb-2" style="font-size: 1rem">&nbsp; &nbsp;
-                    Go back home</a>
-                <h5 class="text-center text-light bg-success mb-2 p-2 rounded lead">Request Product Entry</h5>
+                <h5 class="text-center mb-2 p-2 rounded lead">Product Creation</h5>
 
                 @if(session()->has('success'))
                     <div class="alert alert-success">
@@ -35,7 +33,7 @@
                     </div>
                 @endif
 
-                <div class="progress-bar bg-success rounded mb-3" role="progressbar" style="width: 20%; height: 40px"
+                <div class="progress-bar bg-primary rounded mb-3" role="progressbar" style="width: 20%; height: 40px"
                      id="progressBar">
                     <b class="lead" id="progressText">Step-1</b>
                 </div>
@@ -48,7 +46,7 @@
                         <div id="step_1_validation" style="display: none" class="alert alert-danger" role="alert">
                             Please fill out the form
                         </div>
-                        <h4 class="text-center bg-primary p-1 rounded text-light">Product Information</h4>
+                        <h4 class="text-center bg-primary p-1 rounded text-light">Product Details</h4>
                         <div class="form-group">
                             <label for="product_name">Product Name </label>
                             <input type="text" id="product_name" name="product_name" class="form-control"
@@ -125,26 +123,24 @@
                     <div id="third" style="display: none">
                         <h4 class="text-center bg-primary p-1 rounded text-light">Product Specification</h4>
 
-                        <h4 class="alert alert-warning"><i class="bi bi-info-circle">&nbsp;&nbsp;</i>All product measurements should be in cubic ft.</h4>
-
                         <div class="form-group">
-                            <label for="product_length">Product length</label>
+                            <label for="product_length">Product length (Inches)</label>
                             <input class="form-control" id="product_length" min="0" type="number" name="product_length">
 
                         </div>
 
                         <div class="form-group">
-                            <label for="product_width">Product Width</label>
+                            <label for="product_width">Product Width (Inches)</label>
                             <input class="form-control" id="product_width" min="0" type="number" name="product_width">
                         </div>
 
                         <div class="form-group">
-                            <label for="product_height">Product Height</label>
+                            <label for="product_height">Product Height (Inches)</label>
                             <input class="form-control" id="product_height" min="0" type="number" name="product_height">
                         </div>
 
                         <div class="form-group">
-                            <label for="product_weight">Product Weight</label>
+                            <label for="product_weight">Product Weight (grams)</label>
                             <input class="form-control" id="product_weight" min="0" type="number" name="product_weight">
                         </div>
 
@@ -228,6 +224,8 @@
                     $('#second').hide();
                     $('#progressBar').css('width', '100%')
                     $('#progressText').text('Step - 3')
+                    $('#progressBar').addClass('bg-success')
+                    $('#progressBar').remove('bg-primary')
                     $('#third').show(800)
 
                 }

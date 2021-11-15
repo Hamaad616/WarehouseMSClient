@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Logger;
@@ -32,7 +33,8 @@ Route::prefix('client')->group(function(){
     Route::get('/product/export-csv', [App\Http\Controllers\MainController::class, 'fileProductExport'])->name('products.export');
     Route::get('/my-products', [App\Http\Controllers\MainController::class, 'getClientProducts'])->name('client.my-products');
     Route::get('/products/requested', [App\Http\Controllers\MainController::class, 'getRequestedProducts'])->name('products.requested');
-    Route::get('/invoices', [App\Http\Controllers\MainController::class, 'getClientInvoices'])->name('client.invoices');
+    Route::get('/invoices/{client_id}', [App\Http\Controllers\MainController::class, 'getClientInvoices'])->name('client.invoices');
+    Route::get('invoice/{client_id}/{created_at}', [MainController::class, 'getClientInvoice'])->name('invoice.generate');
 //    Route::get('/my-products/ajax', function (){
 //        $user_id = session('id');
 //        $products = DB::table('product_item')->select('*')->where('client_id', '=', $user_id)->simplePaginate(10);

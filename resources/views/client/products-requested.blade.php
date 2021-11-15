@@ -114,7 +114,7 @@
                                                 cuft.
                                             </td>
                                             <td>{{ $products->weight }}</td>
-                                            <td><img src="{{ asset('uploads/'.$products->product_picture) }}"
+                                            <td><img style="width: 50px; height: 60px" src="{{ asset('uploads/'.$products->product_picture) }}"
                                                      alt="{{ $products->product_name }}"></td>
                                             <td>@if($products->status == 0) <h5><span class="badge badge-warning">Under Review</span></h5>@endif</td>
                                         </tr>
@@ -164,7 +164,7 @@
                                                 cuft.
                                             </td>
                                             <td>{{ $products->weight }}</td>
-                                            <td><img src="{{ asset('uploads/'.$products->product_picture) }}"
+                                            <td><img style="width: 50px; height: 60px" src="{{ asset('uploads/'.$products->product_picture) }}"
                                                      alt="{{ $products->product_name }}"></td>
                                             <td>@if($products->status == 0) <h5><span class="badge badge-warning">Under Review</span>
                                                 </h5>@endif</td>

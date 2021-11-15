@@ -62,7 +62,7 @@ class MainController extends Controller
     }
 
     public function productRequestInForm(){
-        $categories = DB::select('select * from categories');
+        $categories = DB::select('select * from categories where parent_id = ?', [0]);
         return view('client-product-request', ['categories' => $categories]);
     }
 
@@ -132,8 +132,15 @@ class MainController extends Controller
         return view('client.products-requested', ['requested_products' => $requested_products, 'pending_requested_products' =>$pending_requested_products , 'approved_requested_products' =>$approved_requested_products ,'category' => $category]);
     }
 
-    public function getClientInvoices(){
-        return "Invoices";
+    public function getClientInvoices($client_id)
+    {
+        $stock_in_bill = DB::select('select * from client_stock_in_billing where client_id = ?', [$client_id]);
+        return view('invoices', ['stock_in_bill' => $stock_in_bill, 'client_id' => $client_id]);
+    }
+
+    public function getClientInvoice($client_id, $created_at){
+        $stock_in_invoice = DB::select('select * from client_stock_in_billing where client_id = ? and created_at =?', [$client_id, $created_at]);
+        return view('invoice', ['client_id' => $client_id, 'stock_in_invoice' =>$stock_in_invoice]);
     }
 
     public function logout(Request $request): \Illuminate\Http\RedirectResponse

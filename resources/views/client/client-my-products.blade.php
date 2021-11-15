@@ -39,10 +39,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-<div class="container">
-    <h4 class="ml-3"><a href="#" class="badge badge-primary">Bulk Update</a> <a href="{{ route('products.export') }}" class="badge badge-primary pl-2">Export</a></h4>
 
-<table border=1 id="table_detail" align=center cellpadding=10>
+<div class="container" id="container">
+
+    <span  style="margin-left: 155px" ><a href="#" class="badge badge-primary" style="font-size: 1rem">Bulk Update</a> <a style="font-size: 1rem" href="{{ route('products.export') }}" class="badge badge-primary pl-2">Export</a></span>
+<table border=1 id="table_detail" align=center cellpadding=10 style="margin-top: 1rem">
 
     <tr>
         <th>Sr#</th>
@@ -70,8 +71,8 @@
         </tr>
         <tr style="display: none" id="hiddenRow<?php echo $count;?>" class="hidden_row">
             <td colspan=5>
-                <span class="badge badge-secondary">Barcode {{$product->pitem_code}}</span> <span
-                    class="badge badge-danger">Dimension: {{round(($product->length * $product->width * $product->height)/(1728), 2)}} cubic ft.</span>
+                <span class="badge badge-secondary" style="font-size: 12px">Barcode: {{$product->pitem_code}}</span>
+                <span style="font-size: 12px" class="badge badge-danger">Dimension: {{round(($product->length * $product->width * $product->height)/(1728), 2)}} cubic ft.</span>
             </td>
         </tr>
 
@@ -96,5 +97,8 @@
         {{--    $('#table1').load('<?php echo url('/client/my-products/ajax')?>').fadeIn('slow')--}}
         {{--},1000)--}}
     </script>
+
+
+
 
 @endsection
