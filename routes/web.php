@@ -42,6 +42,17 @@ Route::prefix('client')->group(function(){
 //        $category = DB::table('categories')->select('*')->where('id', '=', $product->category_id)->get();
 //        return view('client.client-my-products', compact(['products', 'category']));
 //    });
+    Route::get('profile', function (){
+        return view('profile');
+    });
+    Route::get('settings/home', function (){
+        return view('client.settings-home');
+    });
+
+    Route::get('settings/personal-info', function (){
+        return view('client.basic-info');
+    });
+
     Route::post('/logout', [\App\Http\Controllers\MainController::class, 'logout'])->name('client.logout');
 });
 

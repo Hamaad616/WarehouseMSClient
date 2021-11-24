@@ -178,7 +178,6 @@
             e.preventDefault();
             let desc = $('#product_description').val()
             let sel_val = +$('#select_category').val()
-            console.log(sel_val)
             $("#first").find("input[type = 'text']").each(function () {
 
                 if (this.value === "") {
