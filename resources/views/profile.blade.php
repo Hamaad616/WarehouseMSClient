@@ -1011,16 +1011,20 @@
     $(document).ready(function () {
         var url = 'settings/home';
         $('#home').click(function () {
-            $('#body-div').load(url)
-            $('#progressbar').animate({
-                width: 100 + "%"
-            }, 10, function () {
-                if (document.getElementById("progressbar").style.width == "100%") {
-                    $(".progress1").fadeOut("slow");
-                }
-            })
+
+            loadDefault()
+            // $('#body-div').load(url)
+            // $('#progressbar').animate({
+            //     width: 100 + "%"
+            // }, 10, function () {
+            //     if (document.getElementById("progressbar").style.width == "100%") {
+            //         $(".progress1").fadeOut("slow");
+            //     }
+            // })
 
         })
+
+
 
         $('#personal-info').click(function () {
             url = 'settings/personal-info'

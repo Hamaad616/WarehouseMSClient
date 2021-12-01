@@ -1,4 +1,189 @@
-<header class="xNklye">
+<style>
+    .layout-top-nav .content-wrapper .content {
+        padding: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .content {
+        min-height: 250px;
+        padding: 0.75rem 1.5rem 0px 1.5rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+
+    section {
+        display: block;
+    }
+
+    .mb-20 {
+        margin-bottom: 20px !important;
+    }
+
+    .col-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .row > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) / 2);
+        padding-left: calc(var(--bs-gutter-x) / 2);
+        margin-top: var(--bs-gutter-y);
+    }
+
+    .g-4, .gy-4 {
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .g-4, .gx-4 {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(var(--bs-gutter-y) * -1);
+        margin-right: calc(var(--bs-gutter-x) / -2);
+        margin-left: calc(var(--bs-gutter-x) / -2);
+    }
+
+    @media (min-width: 992px) {
+        .row-cols-lg-3 > * {
+            flex: 0 0 auto;
+            width: 33.3333333333%;
+        }
+    }
+
+    .row-cols-1 > * {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .col {
+        flex: 1 0 0%;
+    }
+
+    .row > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) / 2);
+        padding-left: calc(var(--bs-gutter-x) / 2);
+        margin-top: var(--bs-gutter-y);
+    }
+
+    .card {
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px 0px rgb(19 23 38 / 5%);
+        margin-bottom: 1.5rem !important;
+    }
+
+    .h-p100 {
+        height: 100% !important;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        padding: 1rem 1rem;
+    }
+
+    .card-body .card-title {
+        margin-bottom: 0.75rem;
+        border-bottom: none;
+    }
+
+    .card-title {
+        margin-bottom: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+    .px-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .b-0 {
+        border: 0px solid #f3f6f9 !important;
+    }
+
+    .px-0 {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .card-title {
+        margin-bottom: 0.5rem;
+    }
+
+    .h4, h4 {
+        font-size: 1.2857142857142858rem;
+    }
+
+    h4, .h4, h5, .h5, h6, .h6 {
+        margin-bottom: 0.7142857143rem;
+    }
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        font-family: "Rubik", sans-serif;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+
+    @media (min-width: 1200px) {
+        h4, .h4 {
+            font-size: 1.5rem;
+        }
+    }
+
+    h4, .h4 {
+        font-size: calc(1.275rem + 0.3vw);
+    }
+
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    h4 {
+        display: block;
+        margin-block-start: 1.33em;
+        margin-block-end: 1.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+
+</style>
+
+{{--<header class="xNklye">--}}
     <div class="B1tEqd">
         <div class="cstRMd">
             <button type="button" class="hryX1e  rN3O0d"
@@ -19,102 +204,82 @@
     <h1 class="x7WrMb">Welcome, {{session('username')}}</h1>
     <div class="cmSWBc">Manage your info, and subscriptions to make Us work better for you.</div>
 
+    <section class="content">
 
-    <div class="row mt-2">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <a href="" style="text-decoration: none; color: black">
-                        <div class="fxHFgc" style="float: right;">
-                            <style nonce="">.HJOYVi15 {
-                                    width: 96px;
-                                    height: 96px;
-                                }</style>
-                            <figure class="HJOYV HJOYVi15" aria-hidden="true"><img class="YPzqGd"
-                                                                                   src="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_96x96_cdb6dff2e31ed6745ece4662231bfd48.png"
-                                                                                   alt="" aria-hidden="true"
-                                                                                   srcset="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_192x192_36c8f2f8cd284ca9567f6dad397345a4.png 2x, https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_288x288_5b7c7cf827838f7d34c6ef80867d184f.png 3x, https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_384x384_797111c10207d944be51618128f54328.png 4x"
-                                                                                   data-atf="false"></figure>
+        <div class="row">
+            <div class="col-12 mb-20">
+                <div class="row row-cols-1 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card h-p100">
+
+                            <div class="card-body">
+                                <div id="example" data-donutty data-min=-50 data-max=50 data-value=-20>
+                                    <span class="text-secondary">
+                                        <span class="fs-36">58%</span>
+                                        <br>Location used
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-footer justify-content-between d-flex">
+                                <span class="text-muted">Last updated 3 mins ago</span>
+                                <span>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star-half text-warning"></i>
+									<span class="text-muted ms-2">(12)</span>
+								</span>
+                            </div>
                         </div>
-                        <div class="ueiHJd">
-                            <style nonce="">.HJOYVi16 {
-                                    width: 316px;
-                                    height: 112px;
-                                }</style>
-                            <figure class="HJOYV HJOYVi16 P0ukfb" aria-hidden="true"><img class="YPzqGd"
-                                                                                          src="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_scene_316x112_d44d029bece08e17f0dfed1f2b2271c2.png"
-                                                                                          alt="" aria-hidden="true"
-                                                                                          srcset="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_scene_632x224_f4a7f27261572f5263ca3733d7e85895.png 2x, https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_scene_948x336_d9263e611f9026fe2635509fa8ed8ffd.png 3x, https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_scene_1264x448_84e7ededf9b05afeeba1c6413105bc1e.png 4x"
-                                                                                          data-atf="false"></figure>
+                    </div>
+                    <div class="col">
+                        <div class="card h-p100">
+
+                            <div class="card-body">
+                                <div id="example" data-donutty></div>
+                            </div>
+                            <div class="card-footer justify-content-between d-flex">
+                                <span class="text-muted">Last updated 3 mins ago</span>
+                                <span>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star-half text-warning"></i>
+									<span class="text-muted ms-2">(12)</span>
+								</span>
+                            </div>
                         </div>
-
-                        <h5 class="card-title">Privacy & Personal info</h5>
-                        <p class="card-text">See your profile info in your account settings and choose what activity
-                            is
-                            to saved to personalize your experience.</p>
-
-
-                        <div class="cv2gi" role="presentation">
-                            <div class="Q5jTGb"></div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-p100">
+                            <div class="card-body">
+                                <div id="example" data-donutty></div>
+                            </div>
+                            <div class="card-footer justify-content-between d-flex">
+                                <span class="text-muted">Last updated 3 mins ago</span>
+                                <span>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star-half text-warning"></i>
+									<span class="text-muted ms-2">(12)</span>
+								</span>
+                            </div>
                         </div>
-
-
-                        <div class="VfPpkd-ksKsZd-XxIAqe CmhoVd">
-                            <a href="" style="text-decoration: none" class="VZLjze Wvetm I6g62c N5YmOc kJXJmd"
-                               data-rid="10004"
-                               data-nav-type="5">
-                                <div class="mtfBU">Manage your data &amp; privacy</div>
-                            </a>
-                        </div>
-
-
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <a href="" style="text-decoration: none; color: black">
-                        <div class="fxHFgc" style="float: right;">
-                            <style nonce="">.HJOYVi15 {
-                                    width: 96px;
-                                    height: 96px;
-                                }</style>
-                            <figure class="HJOYV HJOYVi15" aria-hidden="true"><span class="material-icons YPzqGd" style="font-size: 5rem">payment</span></figure>
-                        </div>
-                        <div class="ueiHJd">
-                            <style nonce="">.HJOYVi16 {
-                                    width: 316px;
-                                    height: 112px;
-                                }</style>
-                            <figure class="HJOYV HJOYVi16 P0ukfb" aria-hidden="true"><span class="material-icons YPzqGd">payment</span></figure>
-                        </div>
 
-                        <h5 class="card-title">Payments & Subscriptions</h5>
-                        <p class="card-text">See your subscriptions in your account settings and choose what plan is suitable for you to personalize your payments</p>
+    </section>
+<script src="{{ asset('dist/donutty-jquery.js') }}"></script>
 
 
-                        <div class="cv2gi" role="presentation">
-                            <div class="Q5jTGb"></div>
-                        </div>
 
 
-                        <div class="VfPpkd-ksKsZd-XxIAqe CmhoVd">
-                            <a href="" style="text-decoration: none" class="VZLjze Wvetm I6g62c N5YmOc kJXJmd"
-                               data-rid="10004"
-                               data-nav-type="5">
-                                <div class="mtfBU">Manage your payements &amp; subscriptions</div>
-                            </a>
-                        </div>
-
-
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</header>
+{{--</header>--}}
 
 

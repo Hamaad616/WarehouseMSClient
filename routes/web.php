@@ -35,16 +35,11 @@ Route::prefix('client')->group(function(){
     Route::get('/products/requested', [App\Http\Controllers\MainController::class, 'getRequestedProducts'])->name('products.requested');
     Route::get('/invoices/{client_id}', [App\Http\Controllers\MainController::class, 'getClientInvoices'])->name('client.invoices');
     Route::get('invoice/{client_id}/{created_at}', [MainController::class, 'getClientInvoice'])->name('invoice.generate');
-//    Route::get('/my-products/ajax', function (){
-//        $user_id = session('id');
-//        $products = DB::table('product_item')->select('*')->where('client_id', '=', $user_id)->simplePaginate(10);
-//        $product = DB::table('product_item')->select('*')->where('client_id', '=', $user_id)->first();
-//        $category = DB::table('categories')->select('*')->where('id', '=', $product->category_id)->get();
-//        return view('client.client-my-products', compact(['products', 'category']));
-//    });
-    Route::get('profile', function (){
-        return view('profile');
-    });
+    Route::get('request/{client_id}/requisition', [MainController::class, 'clientFulfillment'])->name('client.create-requisition');
+    Route::get('create-client-fulfillment', [MainController::class, 'createClientFulfillment'])->name('client.create-fulfillment');
+    Route::get('searchProduct', [MainController::class, 'searchProduct'])->name('searchProduct');
+
+    Route::get('profile', [MainController::class, 'clientProfile'])->name('client.profile');
     Route::get('settings/home', function (){
         return view('client.settings-home');
     });

@@ -34,7 +34,6 @@ class HomeController extends Controller
 
 
      $users=    DB::select("select * from clients where client_email='$email' and password='$password'");
-        dd($users);
         if (empty($users)) {
             return redirect("/");
         } else {

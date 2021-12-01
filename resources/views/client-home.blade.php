@@ -48,6 +48,16 @@
                             <a id="request_create" class="btn btn-success">Create Product</a>
                         </div>
                     </div>
+
+                    <div class="card" style="width: 20rem;">
+                        <center><i class="bi bi-bag-dash" style="font-size: 10rem"></i></center>
+                        <div class="card-body">
+                            <h5 class="card-title"> {{ strtoupper('Request a Product Requisition') }}</h5>
+                            <p class="card-text">Make a requisition for products you desire</p>
+                            <a id="requisition_create" href="{{ route('client.create-requisition', ['client_id' => session('id')]) }}" class="btn btn-success">Create Requisition</a>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -62,6 +72,7 @@
             event.preventDefault();
             window.location.href = "/client/request/product-in";
         });
+
 
     </script>
 @endsection

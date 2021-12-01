@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Imports\ExportProducts;
 use App\Imports\ImportProducts;
+use App\Models\clientProducts;
 use App\Models\clients;
 use App\Models\ClientStockRequests;
+use App\Models\stocked_in_products;
 use http\Env\Url;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -147,6 +149,51 @@ class MainController extends Controller
     {
         $request->session()->forget('email');
         return redirect()->route('client.login');
+    }
+
+    public function clientFulfillment($client_id)
+    {
+        $client_products = clientProducts::all();
+        $client_name = clients::where('sch_id', $client_id)->get();
+        $sessions = DB::table('academic_session')->select('*')->get();
+        $couriers = DB::table('couriers')->select('*')->get();
+        return view('client.client-fulfillment', ['client_id' => $client_id, 'client_products' => $client_products, 'client_name' => $client_name, 'sessions' => $sessions, 'couriers' => $couriers]);
+    }
+
+    public function createClientFulfillment(Request $request)
+    {
+        $users2 = DB::select("INSERT INTO `requisition`( `sch_id`, `wh_id`, `po`,`mode`, `deleivery_date_time`, `courier`, `remarks` ,`session_id`) VALUES ('$request->client_id','$request->wh_id','$request->po','$request->mode','$request->date', '$request->couriers', '$request->remarks', '$request->session_id')");
+        $last_req_id = DB::getPDO()->lastInsertId();
+        $arrayLength = count($request->product_name);
+        for ($col = 0; $col < $arrayLength; $col++) {
+            $product_code = $request->product_code[$col];
+            $product_quantity = $request->product_quantity[$col];
+
+            $data = stocked_in_products::where('product_id', '=' ,$product_code)->first();
+            if($data!=""){
+            $its = stocked_in_products::find($data->its_id);
+                $x = $its->quantity;
+                $y = $request->product_quantity[$col];
+                $sub = $x-$y;
+                $its->quantity = $sub;
+                $its->update();
+            }
+            $users2 = DB::select("INSERT INTO `requisition_details` (`req_id` ,`product_code`, `quantity`) VALUES ('$last_req_id','$product_code','$product_quantity')");
+        }
+        return response()->json(['code' => 1, 'msg' => 'Successfully created requisition']);
+    }
+
+    public function searchProduct(Request $request)
+    {
+        $code = $request->search_code;
+        $client_id = $request->client_id;
+
+        $client_product = DB::table('product_item')->where('client_id', $client_id)->where('pitem_code', $code)->get();
+        return response()->json(['details' => $client_product]);
+    }
+
+    public function clientProfile(){
+        return view('profile', ['client_id' => session('id')]);
     }
 
 

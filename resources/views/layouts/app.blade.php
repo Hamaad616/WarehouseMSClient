@@ -105,8 +105,8 @@
                                     {{ __('Logout') }}
                                 </a>
 
-                                <a class="dropdown-item" href="">
-                                    {{ __('Settings') }}
+                                <a class="dropdown-item" href="{{ route('client.profile') }}">
+                                    {{ __('Profile') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('client.logout') }}" method="POST"
